@@ -84,14 +84,27 @@ public class MainActivity extends AppCompatActivity {
     // ------ Initialization of the dataset ------ //
 
     private void initListOfItems () {
+
+        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra));
+        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados));
+        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa));
+        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa));
+        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime));
+        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny));
+
+
+
+
+
         // Populate the list of items if not done before:
-        final int ITEM_COUNT = 50;
+        /*final int ITEM_COUNT = 50;
         if (listofitemsinitialized == false) {
             for (int i = 0; i < ITEM_COUNT; ++i) {
                 listofitems.add(new Item("Item " + i, "This is the item number " + i, (long) i));
             }
             listofitemsinitialized = true;
-        }
+        }*/
+
     }
 
     // ------ Buttons' on-click listeners ------ //
