@@ -46,4 +46,5 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
         context.startActivity(i);
         return true;
     }
+
 }

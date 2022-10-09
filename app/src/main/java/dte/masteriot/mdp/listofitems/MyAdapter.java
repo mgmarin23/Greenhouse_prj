@@ -79,5 +79,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         this.selectionTracker = selectionTracker;
     }
 
+    public void removeItem(Long removekey){
+        for(int i= 0 ; i<items.size(); ++i){
+            if(items.get(i).getKey() == removekey){
+                items.remove(i);
+            }
+        }
+    }
 
 }

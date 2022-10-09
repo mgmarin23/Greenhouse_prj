@@ -133,34 +133,15 @@ public class MainActivity extends AppCompatActivity {
         // Button "see current selection" has been clicked:
 
         Iterator iteratorSelectedItemsKeys = tracker.getSelection().iterator();
-        // This iterator allows to navigate through the keys of the currently selected items.
-        // Complete info on getSelection():
-        // https://developer.android.com/reference/androidx/recyclerview/selection/SelectionTracker#getSelection()
-        // Complete info on class Selection (getSelection() returns an object of this class):
-        // https://developer.android.com/reference/androidx/recyclerview/selection/Selection
 
-        //String text = "";
-        /*
         while (iteratorSelectedItemsKeys.hasNext()) {
-            iteratorSelectedItemsKeys.remove();
-
+            recyclerViewAdapter.removeItem(Long.parseLong(iteratorSelectedItemsKeys.next().toString()));
+            //recyclerViewAdapter.notifyItemRemoved(Integer.parseInt(iteratorSelectedItemsKeys.next().toString()));
         }
-        */
-
-        //notifyItemRangeChanged(position, mDataSet.size());
-        //text = "Keys of currently selected items = \n" + text;
-
-        //iteratorSelectedItemsKeys.remove();
-
-        /*Intent i = new Intent(this, SecondActivity.class);
-        i.putExtra("text", text);
-        startActivity(i);
-*/
-        /*
-
-        */
+        recyclerViewAdapter.notifyDataSetChanged();
     }
-    /*public void removeAt(int position) {
+    /*
+    public void removeAt(int position) {
         //mDataset.remove(position);
         RecyclernotifyItemRemoved(position);
         notifyItemRangeChanged(position, mDataSet.size());
