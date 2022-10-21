@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime));
         listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny));
 
+        listofitemsinitialized = true;
 
 
 

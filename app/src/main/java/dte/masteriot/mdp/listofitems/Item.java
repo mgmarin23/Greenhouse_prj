@@ -30,6 +30,10 @@ public class Item {
         return key;
     }
 
+    public int getImage(){ return image;}
+
+    public String getStringURI(){ return stringURI; }
+
     // We override the "equals" operator to only compare keys
     // (useful when searching for the position of a specific key in a list of Items):
     public boolean equals(Object other) {

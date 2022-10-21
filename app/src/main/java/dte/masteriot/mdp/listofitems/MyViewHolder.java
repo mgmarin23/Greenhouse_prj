@@ -4,12 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +17,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     // Holds references to individual item views
     TextView title;
     TextView subtitle;
+    ImageView image;
 
     Context context;
     MyAdapter adapter;
@@ -30,6 +29,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         context = ctxt;
         title = itemView.findViewById(R.id.title);
         subtitle = itemView.findViewById(R.id.subtitle);
+        image = itemView.findViewById(R.id.imageView); //[Mario] You have to add here to select the image when the initialize the list
+        // imageView is the name of the XML Layout
         adapter = ad;
     }
 
@@ -38,6 +39,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         // formats the title's text color depending on the "isSelected" argument.
         title.setText(item.getTitle());
         subtitle.setText(item.getSubtitle());
+        image.setImageResource(item.getImage()); //[Mario] You have to add here to select the image when the initialize the list
+
         if(isSelected) {
             title.setTextColor(Color.BLUE);
         } else {
