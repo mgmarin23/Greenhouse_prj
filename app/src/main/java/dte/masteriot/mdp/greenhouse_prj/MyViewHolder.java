@@ -1,4 +1,4 @@
-package dte.masteriot.mdp.listofitems;
+package dte.masteriot.mdp.greenhouse_prj;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,6 +18,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     TextView title;
     TextView subtitle;
     ImageView image;
+    ImageView status;
 
     Context context;
     MyAdapter adapter;
@@ -31,6 +32,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         subtitle = itemView.findViewById(R.id.subtitle);
         image = itemView.findViewById(R.id.imageView); //[Mario] You have to add here to select the image when the initialize the list
         // imageView is the name of the XML Layout
+        //status = itemView.findViewById(R.id.background);
+
         adapter = ad;
     }
 
@@ -41,8 +44,11 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         subtitle.setText(item.getSubtitle());
         image.setImageResource(item.getImage()); //[Mario] You have to add here to select the image when the initialize the list
 
+        //background.setColor(item.getStatus());
+
         if(isSelected) {
             title.setTextColor(Color.BLUE);
+            //status.setColorFilter(Color.BLUE);
         } else {
             title.setTextColor(Color.BLACK);
         }

@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">ListOfItems</string>
+    <string name="app_name">Greenhouse_prj</string>
+    <string name="title_activity_third">ThirdActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="light_sensor_off">Light\nOFF</string>
+    <string name="light_sensor_on">Light\nON</string>
+
+    <string name="accel_sensor_off">Accel\nOFF</string>
+    <string name="accel_sensor_on">Accel\nON</string>
+
+    <string name="step_sensor_off">Step\nOFF</string>
+    <string name="step_sensor_on">Step\nON</string>
+
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+
 </resources>

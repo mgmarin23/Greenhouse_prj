@@ -1,10 +1,9 @@
-package dte.masteriot.mdp.listofitems;
+package dte.masteriot.mdp.greenhouse_prj;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;

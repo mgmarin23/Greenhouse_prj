@@ -1,4 +1,4 @@
-package dte.masteriot.mdp.listofitems;
+package dte.masteriot.mdp.greenhouse_prj;
 
 public class Item {
     // This class contains the actual data of each item of the dataset
@@ -6,16 +6,19 @@ public class Item {
     private String title;
     private String subtitle;
     private Long key; // In this app we use keys of type Long
+    private boolean status;
 
     private int image;
     private String stringURI;
 
-    Item(String title, String stringURI, String subtitle, Long key, int image) {
+    //Item(String title, String stringURI, String subtitle, Long key, int image, boolean status) {
+        Item(String title, String stringURI, String subtitle, Long key, int image) {
         this.title = title;
         this.subtitle = subtitle;
         this.key = key;
         this.image = image;
         this.stringURI = stringURI;
+        this.status = status;
     }
 
     public String getTitle() {
@@ -33,6 +36,8 @@ public class Item {
     public int getImage(){ return image;}
 
     public String getStringURI(){ return stringURI; }
+
+    public boolean getStatus(){return status; }
 
     // We override the "equals" operator to only compare keys
     // (useful when searching for the position of a specific key in a list of Items):

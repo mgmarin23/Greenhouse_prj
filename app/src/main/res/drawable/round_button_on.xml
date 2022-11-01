@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Code adapted from:-->
+<!--[https://android&#45;&#45;code.blogspot.com/2015/01/android-round-button.html]-->
+
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--button default background color-->
+<item>
+    <shape android:shape="oval">
+        <solid android:color="@color/green" />
+        <size android:width="150dp" android:height="150dp"/>
+    </shape>
+</item>
+</selector>

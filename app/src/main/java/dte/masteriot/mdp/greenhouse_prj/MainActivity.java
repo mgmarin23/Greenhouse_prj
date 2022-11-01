@@ -2,7 +2,7 @@
 // https://enoent.fr/posts/recyclerview-basics/
 // https://developer.android.com/guide/topics/ui/layout/recyclerview
 
-package dte.masteriot.mdp.listofitems;
+package dte.masteriot.mdp.greenhouse_prj;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.selection.ItemKeyProvider;
 import androidx.recyclerview.selection.SelectionTracker;
-import androidx.recyclerview.selection.StableIdKeyProvider;
 import androidx.recyclerview.selection.StorageStrategy;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -85,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListOfItems () {
 
-        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra));
+        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra ));
         listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados));
-        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa));
-        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa));
+        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa ));
+        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa ));
         listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime));
-        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny));
+        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny ));
 
         listofitemsinitialized = true;
 
@@ -117,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void gridLayout(View view) {
         // Button to see in a grid fashion has been clicked:
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        //recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+
+        Intent i = new Intent(MainActivity.this, ThirdActivity.class);
+        startActivity(i);
     }
 
     public void seeCurrentSelection(View view) {

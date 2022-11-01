@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dte.masteriot.mdp.listofitems">
+    package="dte.masteriot.mdp.greenhouse_prj">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListOfItems">
-        <activity android:name=".SecondActivity"></activity>
-        <activity android:name=".MainActivity">
+
+        <activity android:name="dte.masteriot.mdp.greenhouse_prj.SecondActivity" />
+        <activity android:name="dte.masteriot.mdp.greenhouse_prj.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="dte.masteriot.mdp.greenhouse_prj.ThirdActivity"
+            android:exported="false"
+            android:label="@string/title_activity_third"
+            android:theme="@style/Theme.ListOfItems.NoActionBar" />
     </application>
 
 </manifest>

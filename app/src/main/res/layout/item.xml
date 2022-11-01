@@ -6,6 +6,10 @@
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
     android:layout_margin="3dp"
+
+    android:id="@+id/background"
+    android:backgroundTint="@color/purple_200"
+    android:backgroundTintMode="multiply"
     >
 
     <LinearLayout
@@ -33,11 +37,12 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:text="Placeholder for title" />
+
             <TextView
                 android:id="@+id/subtitle"
                 style="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Placeholder for subtitle" />
         </LinearLayout>

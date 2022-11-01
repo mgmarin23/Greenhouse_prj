@@ -1,2 +1,2 @@
-rootProject.name = "ListOfItems"
+rootProject.name = "Greenhouse_prj"
 include ':app'

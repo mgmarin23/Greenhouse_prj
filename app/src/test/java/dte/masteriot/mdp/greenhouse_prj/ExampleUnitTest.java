@@ -1,4 +1,4 @@
-package dte.masteriot.mdp.listofitems;
+package dte.masteriot.mdp.greenhouse_prj;
 
 import org.junit.Test;
 
