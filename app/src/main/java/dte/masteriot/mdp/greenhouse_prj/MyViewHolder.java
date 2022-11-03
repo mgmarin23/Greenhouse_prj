@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +19,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     TextView title;
     TextView subtitle;
     ImageView image;
-    ImageView status;
+    CardView status;
 
     Context context;
     MyAdapter adapter;
@@ -32,27 +33,34 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         subtitle = itemView.findViewById(R.id.subtitle);
         image = itemView.findViewById(R.id.imageView); //[Mario] You have to add here to select the image when the initialize the list
         // imageView is the name of the XML Layout
-        //status = itemView.findViewById(R.id.background);
+        status = itemView.findViewById(R.id.background);
 
         adapter = ad;
     }
 
-    void bindValues(Item item, Boolean isSelected) {
+    void bindValues(Item item, Boolean isSelected, Boolean StatusItem ) {
         // give values to the elements contained in the item view.
         // formats the title's text color depending on the "isSelected" argument.
         title.setText(item.getTitle());
         subtitle.setText(item.getSubtitle());
-        image.setImageResource(item.getImage()); //[Mario] You have to add here to select the image when the initialize the list
+        image.setImageResource(item.getImage()); //[MGM] You have to add here to select the image when the initialize the list
+        if(StatusItem) {
 
-        //background.setColor(item.getStatus());
+            status.setBackgroundColor(Color.parseColor("#92E592")); //GreenColor
+        } else {
+            status.setBackgroundColor(Color.parseColor("#FF6666")); //RedColor
 
+        }
         if(isSelected) {
-            title.setTextColor(Color.BLUE);
-            //status.setColorFilter(Color.BLUE);
+            title.setTextColor(Color.WHITE);
+            status.setBackgroundColor(Color.parseColor("#bcbcbc"));
         } else {
             title.setTextColor(Color.BLACK);
+
         }
     }
+
+
 
     @SuppressLint("LongLogTag")
     @Nullable
@@ -79,6 +87,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Log.d(TAG, "ItemDetailsLookup.ItemDetails<Long>.getSelectionKey() called, will return " + adapter.getKeyAtPosition(getAbsoluteAdapterPosition()));
                 return (adapter.getKeyAtPosition(getAbsoluteAdapterPosition()));
             }
+            //[MGM] take the value of the status
+            /*
+            public boolean getStatusItem(){
+                return (adapter.getStatusAtPosition(getAbsoluteAdapterPosition()));
+            }
+             */
         };
 
         return itemDetails;

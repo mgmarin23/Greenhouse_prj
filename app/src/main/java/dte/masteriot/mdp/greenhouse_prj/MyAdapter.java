@@ -43,11 +43,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         // (values corresponding to the item in 'position')
 
         final Item item = items.get(position);
-
+        boolean status = item.getStatus();
         Log.d(TAG, "onBindViewHolder() called for element in position " + position +
                 ", Selected? = " + selectionTracker.isSelected(holder.getItemDetails().getSelectionKey()));
 
-        holder.bindValues(item, selectionTracker.isSelected(holder.getItemDetails().getSelectionKey()));
+        holder.bindValues(item, selectionTracker.isSelected(holder.getItemDetails().getSelectionKey()), status );
+
+        //holder.bindValues(item, holder.getItemDetails().getStatusItem()); //[MGM]
     }
 
     @Override
@@ -68,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getPositionOfKey(Long searchedkey) {
         // Look for the position of the Item with key = searchedkey.
         // The following works because in Item, the method "equals" is overriden to compare only keys:
-        int position = items.indexOf(new Item("placeholder", "placeholder","placeholder", searchedkey, 0));
+        int position = items.indexOf(new Item("placeholder", "placeholder","placeholder", searchedkey, 0, true));
         Log.d(TAG, "getPositionOfKey() called for key " + searchedkey + ", will return " + position);
         return position;
     }
@@ -76,7 +78,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void setSelectionTracker(SelectionTracker selectionTracker) {
         this.selectionTracker = selectionTracker;
     }
-
+/*
+    public boolean getStatusAtPosition(int pos) {
+        return (items.get(pos).getStatus());
+    } //[MGM]
+*/
     public void removeItem(Long removekey){
         for(int i= 0 ; i<items.size(); ++i){
             if(items.get(i).getKey() == removekey){

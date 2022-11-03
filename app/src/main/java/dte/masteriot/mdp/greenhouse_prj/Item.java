@@ -12,7 +12,7 @@ public class Item {
     private String stringURI;
 
     //Item(String title, String stringURI, String subtitle, Long key, int image, boolean status) {
-        Item(String title, String stringURI, String subtitle, Long key, int image) {
+        Item(String title, String stringURI, String subtitle, Long key, int image , boolean status) {
         this.title = title;
         this.subtitle = subtitle;
         this.key = key;

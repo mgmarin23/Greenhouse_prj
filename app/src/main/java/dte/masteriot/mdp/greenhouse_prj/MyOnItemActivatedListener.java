@@ -40,19 +40,20 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
         /*
         Log.d(TAG, "Clicked item with position = " + itemdetails.getPosition()
                 + " and key = " + itemdetails.getSelectionKey());
-
+        */
         Intent i = new Intent(context, SecondActivity.class);
         i.putExtra("text", "Clicked item with position = " + itemdetails.getPosition()
                 + " and key = " + itemdetails.getSelectionKey());
         context.startActivity(i);
         return true;
-        */
 
+
+        /*
         Item selecteditem = adapter.getItemAtPosition(itemdetails.getPosition());
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(selecteditem.getStringURI()));
-
         context.startActivity(i);
         return true;
+        */
 
     }
 

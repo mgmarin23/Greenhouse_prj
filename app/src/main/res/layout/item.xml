@@ -8,8 +8,6 @@
     android:layout_margin="3dp"
 
     android:id="@+id/background"
-    android:backgroundTint="@color/purple_200"
-    android:backgroundTintMode="multiply"
     >
 
     <LinearLayout

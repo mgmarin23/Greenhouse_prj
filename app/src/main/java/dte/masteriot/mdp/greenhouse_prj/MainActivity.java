@@ -6,6 +6,7 @@ package dte.masteriot.mdp.greenhouse_prj;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "ListOfItems, MainActivity";
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private SelectionTracker tracker;
     private MyOnItemActivatedListener onItemActivatedListener;
     private Object next;
+
+    ExecutorService es; //[MGM] Background
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initListOfItems () {
 
-        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra ));
-        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados));
-        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa ));
-        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa ));
-        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime));
-        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny ));
+        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra, true ));
+        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados , false ));
+        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa , true ));
+        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa , false ));
+        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime, true ));
+        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny , true ));
 
         listofitemsinitialized = true;
 
@@ -156,12 +162,12 @@ public class MainActivity extends AppCompatActivity {
         }
         recyclerViewAdapter.notifyDataSetChanged();
     }
-    /*
-    public void removeAt(int position) {
-        //mDataset.remove(position);
-        RecyclernotifyItemRemoved(position);
-        notifyItemRangeChanged(position, mDataSet.size());
 
+    /*
+    public void buttonAsyncListener(View view) {
+        //Log.d(logTag, "Scheduling new task in background thread");
+        es.execute(new LengthyTask());
     }
-*/
+     */
+
 }
