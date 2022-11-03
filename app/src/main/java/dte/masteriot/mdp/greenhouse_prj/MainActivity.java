@@ -28,6 +28,9 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
+    ExecutorService es; //[MGM] Background
+    String logTag;
+
     private static final String TAG = "ListOfItems, MainActivity";
 
     // App-specific dataset:
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private MyOnItemActivatedListener onItemActivatedListener;
     private Object next;
 
-    ExecutorService es; //[MGM] Background
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
             // Restore state related to selections previously made
             tracker.onRestoreInstanceState(savedInstanceState);
         }
+
+        //es.execute(new MQTT_Sub());
     }
 
     @Override
@@ -163,11 +168,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
-    /*
+
     public void buttonAsyncListener(View view) {
-        //Log.d(logTag, "Scheduling new task in background thread");
-        es.execute(new LengthyTask());
+        Log.d(logTag, "Scheduling new task in background thread");
+        es.execute(new MQTT_Sub());
+        //printf();
     }
-     */
+
 
 }
