@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MyAdapter2 extends RecyclerView.Adapter {
+public class MyAdapter2 extends RecyclerView.Adapter<MyViewHolder2> {
 
 
     List<Ideas> fetchData;
@@ -25,21 +25,22 @@ public class MyAdapter2 extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ideas,parent, false);
 
-        ViewHolderClass viewHolderClass = new ViewHolderClass(view);
+        //ViewHolderClass viewHolderClass = new ViewHolderClass(view);
 
-        return viewHolderClass;
+        //return viewHolderClass;
+        return new MyViewHolder2(view,this);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder2 holder, int position) {
         //ViewHolderClass viewHolderClass = (ViewHolderClass)holder;
         final Ideas idea = fetchData.get(position);
         //viewHolderClass.textView.setText(fetchDatalist);
-
+        holder.bindValues(idea);
     }
 
     @Override

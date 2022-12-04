@@ -58,6 +58,13 @@ public class SecondActivity extends AppCompatActivity {
         fetchData.add(new Ideas("f"));
         fetchData.add(new Ideas("g"));
         fetchData.add(new Ideas("h"));
+        fetchData.add(new Ideas("i"));
+        fetchData.add(new Ideas("j"));
+        fetchData.add(new Ideas("k"));
+        fetchData.add(new Ideas("l"));
+        fetchData.add(new Ideas("m"));
+        fetchData.add(new Ideas("n"));
+        fetchData.add(new Ideas("ñ"));
 
     }
 }
