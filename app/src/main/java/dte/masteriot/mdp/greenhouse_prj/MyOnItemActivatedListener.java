@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
@@ -41,9 +42,15 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
         Log.d(TAG, "Clicked item with position = " + itemdetails.getPosition()
                 + " and key = " + itemdetails.getSelectionKey());
         */
+        //Second Activity when press a item
         Intent i = new Intent(context, SecondActivity.class);
+        /*
         i.putExtra("text", "Clicked item with position = " + itemdetails.getPosition()
                 + " and key = " + itemdetails.getSelectionKey());
+        i.putExtra("key", (Double) itemdetails.getSelectionKey());
+
+         */
+        i.putExtra("key2", (Long) itemdetails.getSelectionKey());
         context.startActivity(i);
         return true;
 

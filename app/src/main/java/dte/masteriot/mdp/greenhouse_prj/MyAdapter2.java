@@ -48,14 +48,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyViewHolder2> {
         return fetchData.size();
     }
 
-    public class ViewHolderClass extends RecyclerView.ViewHolder{
-        TextView textView;
-        public ViewHolderClass(@NonNull View itemView) {
-            super(itemView);
-            textView=itemView.findViewById(R.id.tv_idea);
 
-        }
-    }
 }
 
 
