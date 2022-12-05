@@ -2,11 +2,11 @@ package dte.masteriot.mdp.greenhouse_prj;
 
 public class Ideas {
     String name;
-    int keyideas;
+    long keyideas;
 
 
 
-    Ideas(String name, int keyideas){
+    Ideas(String name, long keyideas){
         this.name = name;
         this.keyideas = keyideas;
     }
@@ -19,11 +19,11 @@ public class Ideas {
         this.name = name;
     }
 
-    public int getKeyideas() {
+    public long getKeyideas() {
         return keyideas;
     }
 
-    public void setKeyideas(int keyideas) {
+    public void setKeyideas(long keyideas) {
         this.keyideas = keyideas;
     }
 }

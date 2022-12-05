@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
@@ -38,10 +39,10 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
         // when no selection exists and the user taps an item with her finger,
         // or double clicks an item with a pointing device like a Mouse."
 
-        /*
+
         Log.d(TAG, "Clicked item with position = " + itemdetails.getPosition()
                 + " and key = " + itemdetails.getSelectionKey());
-        */
+
         //Second Activity when press a item
         Intent i = new Intent(context, SecondActivity.class);
         /*
