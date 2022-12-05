@@ -17,8 +17,10 @@ import java.util.List;
 public class SecondActivity extends AppCompatActivity {
     private static final String TAG = "____SecondActivity___";
 
+    MyApplication myApplication = (MyApplication) this.getApplication();
+
     TextView tv;
-    private static final List<Ideas> fetchData = new ArrayList<>();
+    List<Ideas> fetchData = myApplication.getFetchData();
     private static final List<Ideas> fetchData2 = new ArrayList<>();
 
     RecyclerView recyclerView2;
@@ -31,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        initListOfIdeas();
+
 
         Intent inputIntent = getIntent();
         long y = inputIntent.getLongExtra("key2", 0);
@@ -78,26 +80,7 @@ public class SecondActivity extends AppCompatActivity {
 */
     }
 
-    private void initListOfIdeas() {
 
-        fetchData.add(new Ideas("a",2));
-        fetchData.add(new Ideas("b",2));
-        /*
-        fetchData.add(new Ideas("c",4));
-        fetchData.add(new Ideas("d",5));
-        fetchData.add(new Ideas("e",4));
-        fetchData.add(new Ideas("f",4));
-        fetchData.add(new Ideas("g",0));
-        fetchData.add(new Ideas("h",0));
-        fetchData.add(new Ideas("i",0));
-        fetchData.add(new Ideas("j",1));
-        fetchData.add(new Ideas("k",1));
-        fetchData.add(new Ideas("l",3));
-        fetchData.add(new Ideas("m",3));
-        fetchData.add(new Ideas("n",5));
-        fetchData.add(new Ideas("ñ",2));
-        */
-    }
 
     public void seeCurrentList(long y) {
 

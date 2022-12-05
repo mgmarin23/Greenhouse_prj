@@ -30,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
     ExecutorService es; //[MGM] Background
     String logTag;
+    MyApplication myApplication = (MyApplication) this.getApplication();
 
     private static final String TAG = "ListOfItems, MainActivity";
 
     // App-specific dataset:
-    private static final List<Item> listofitems = new ArrayList<>();
-    private static boolean listofitemsinitialized = false;
+    List<Item> listofitems = myApplication.getListofitems();
+
 
     private RecyclerView recyclerView;
     private MyAdapter recyclerViewAdapter;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize the list of items (the dataset):
-        initListOfItems();
+        //initListOfItems();
 
         // Prepare the RecyclerView:
         recyclerView = findViewById(R.id.recyclerView);
@@ -93,30 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     // ------ Initialization of the dataset ------ //
 
-    private void initListOfItems () {
 
-        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra, true ));
-        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados , false ));
-        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa , true ));
-        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa , false ));
-        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime, true ));
-        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny , true ));
-
-        listofitemsinitialized = true;
-
-
-
-
-        // Populate the list of items if not done before:
-        /*final int ITEM_COUNT = 50;
-        if (listofitemsinitialized == false) {
-            for (int i = 0; i < ITEM_COUNT; ++i) {
-                listofitems.add(new Item("Item " + i, "This is the item number " + i, (long) i));
-            }
-            listofitemsinitialized = true;
-        }*/
-
-    }
 
     // ------ Buttons' on-click listeners ------ //
 
