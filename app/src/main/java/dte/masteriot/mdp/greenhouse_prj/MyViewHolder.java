@@ -17,7 +17,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
     // Holds references to individual item views
     TextView title;
-    TextView subtitle;
+
     ImageView image;
     CardView status;
 
@@ -30,7 +30,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         context = ctxt;
         title = itemView.findViewById(R.id.title);
-        subtitle = itemView.findViewById(R.id.subtitle);
+
         image = itemView.findViewById(R.id.imageView); //[Mario] You have to add here to select the image when the initialize the list
         // imageView is the name of the XML Layout
         status = itemView.findViewById(R.id.background);
@@ -42,7 +42,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         // give values to the elements contained in the item view.
         // formats the title's text color depending on the "isSelected" argument.
         title.setText(item.getTitle());
-        subtitle.setText(item.getSubtitle());
+
         image.setImageResource(item.getImage()); //[MGM] You have to add here to select the image when the initialize the list
         if(StatusItem) {
 

@@ -70,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getPositionOfKey(Long searchedkey) {
         // Look for the position of the Item with key = searchedkey.
         // The following works because in Item, the method "equals" is overriden to compare only keys:
-        int position = items.indexOf(new Item("placeholder", "placeholder","placeholder", searchedkey, 0, true));
+        int position = items.indexOf(new Item("placeholder", "placeholder",0, searchedkey, 0, true));
         Log.d(TAG, "getPositionOfKey() called for key " + searchedkey + ", will return " + position);
         return position;
     }

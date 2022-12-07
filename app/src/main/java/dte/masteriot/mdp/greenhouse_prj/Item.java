@@ -4,7 +4,7 @@ public class Item {
     // This class contains the actual data of each item of the dataset
 
     private String title;
-    private String subtitle;
+    private int nideas;
     private Long key; // In this app we use keys of type Long
     private boolean status;
 
@@ -12,9 +12,9 @@ public class Item {
     private String stringURI;
 
     //Item(String title, String stringURI, String subtitle, Long key, int image, boolean status) {
-        Item(String title, String stringURI, String subtitle, Long key, int image , boolean status) {
+        Item(String title, String stringURI, int nideas, Long key, int image , boolean status) {
         this.title = title;
-        this.subtitle = subtitle;
+        this.nideas = nideas;
         this.key = key;
         this.image = image;
         this.stringURI = stringURI;
@@ -25,8 +25,8 @@ public class Item {
         return title;
     }
 
-    public String getSubtitle() {
-        return subtitle;
+    public int getNideas() {
+        return nideas;
     }
 
     public Long getKey() {

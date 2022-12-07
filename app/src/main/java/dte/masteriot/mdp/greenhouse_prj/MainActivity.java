@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,12 +45,17 @@ public class MainActivity extends AppCompatActivity {
     private MyOnItemActivatedListener onItemActivatedListener;
     private Object next;
 
+    Button btn_add;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //
+        btn_add = findViewById(R.id.add);
+
 
         // Initialize the list of items (the dataset):
         //initListOfItems();
@@ -147,11 +153,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void buttonAsyncListener(View view) {
-        Log.d(logTag, "Scheduling new task in background thread");
-        es.execute(new MQTT_Sub());
-        //printf();
-        //add comment
+    public void AddNewProblem(View view) {
+        Intent i = new Intent(this, NewProblem.class);
+
+        startActivity(i);
     }
 
 

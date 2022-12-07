@@ -24,12 +24,12 @@ public class MyApplication extends Application {
 
     private void initListOfItems () {
 
-        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", "Mejicano" , (long) 0 , R.drawable.tierra, true ));
-        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", "Tradicional" , (long) 1 , R.drawable._0grados , false ));
-        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", "Tapas" , (long) 2 , R.drawable.lamusa , true ));
-        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", "Hamburguesa" , (long) 3 , R.drawable.lamejorhamaburguesa , false ));
-        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", "Hamburguesa" , (long) 4 , R.drawable.sublime, true ));
-        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", "Tradicional" , (long) 5 , R.drawable.el2defortuny , true ));
+        listofitems.add(new Item("Burrito Tierra", "https://www.tierraburritos.com/", 3 , (long) 0 , R.drawable.tierra, true ));
+        listofitems.add(new Item("80 grados", "https://ochentagrados.com/", 2 , (long) 1 , R.drawable._0grados , false ));
+        listofitems.add(new Item("La musa", "https://grupolamusa.com/restaurante-musa-malasana/", 2 , (long) 2 , R.drawable.lamusa , true ));
+        listofitems.add(new Item("La mejor hamburguesa", "https://lamejorhamburguesa.com/", 2 , (long) 3 , R.drawable.lamejorhamaburguesa , false ));
+        listofitems.add(new Item("Sublime", "https://www.sublimeworldrestaurant.com//", 2 , (long) 4 , R.drawable.sublime, true ));
+        listofitems.add(new Item("El 2 de Fortuny", "https://www.loscervecistas.es/locales-cervecistas/el-2-de-fortuny/", 3 , (long) 5 , R.drawable.el2defortuny , true ));
     }
     private void initListOfIdeas() {
 

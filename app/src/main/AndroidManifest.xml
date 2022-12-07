@@ -10,9 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListOfItems">
-
-        <activity android:name="dte.masteriot.mdp.greenhouse_prj.SecondActivity" />
-        <activity android:name="dte.masteriot.mdp.greenhouse_prj.MainActivity">
+        <activity
+            android:name=".NewProblem"
+            android:exported="false" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="dte.masteriot.mdp.greenhouse_prj.ThirdActivity"
+            android:name=".ThirdActivity"
             android:exported="false"
             android:label="@string/title_activity_third"
             android:theme="@style/Theme.ListOfItems.NoActionBar" />
