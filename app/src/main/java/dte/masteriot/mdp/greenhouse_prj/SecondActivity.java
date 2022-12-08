@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class SecondActivity extends AppCompatActivity {
     TextView tv;
     List<Ideas> fetchData = myApplication.getFetchData();
     private static final List<Ideas> fetchData2 = new ArrayList<>();
+    private TextView p_name;
+    private long y;
 
     RecyclerView recyclerView2;
     MyAdapter2 recyclerViewAdapter;
@@ -33,10 +36,12 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-
+        p_name = findViewById(R.id.problem);
 
         Intent inputIntent = getIntent();
-        long y = inputIntent.getLongExtra("key2", 0);
+        y = inputIntent.getLongExtra("key", 0);
+        String pname = inputIntent.getStringExtra("pname");
+        p_name.setText(pname);
 
         Log.d(TAG, "__Clicked item with position = " + y
                 + " and key = " + y);
@@ -52,7 +57,7 @@ public class SecondActivity extends AppCompatActivity {
                 //fetchData.remove(i);
                 //number++;
                 //fetchData2.add(i, fetchData.get(i));
-                fetchData2.add(new Ideas(fetchData.get(i).getName(), fetchData.get(i).getKeyideas()));
+                fetchData2.add(new Ideas(fetchData.get(i).getId(),fetchData.get(i).getName(), fetchData.get(i).getKeyideas(),fetchData.get(i).getDescription(), fetchData.get(i).getLink(),fetchData.get(i).isStar(),fetchData.get(i).isDone()));
 
             }
         }
@@ -80,9 +85,9 @@ public class SecondActivity extends AppCompatActivity {
 */
     }
 
-
-
-    public void seeCurrentList(long y) {
-
+    public void AddNewIdea(View view) {
+        Intent intent = new Intent(this, NewIdea.class);
+        intent.putExtra("key", y);
+        startActivity(intent);
     }
 }

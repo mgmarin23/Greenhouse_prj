@@ -63,6 +63,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         return (items.get(pos));
     }
 
+    public String getPName(int pos){
+        return (items.get(pos).getTitle());
+    }
+
     public Long getKeyAtPosition(int pos) {
         return (items.get(pos).getKey());
     }

@@ -45,4 +45,7 @@ public class MyItemKeyProvider extends ItemKeyProvider<Long> {
         Log.d(TAG, "getPosition() called for key " + key);
         return (adapter.getPositionOfKey(key));
     }
+    public String getName(int position){
+        return (adapter.getPName(position));
+    }
 }

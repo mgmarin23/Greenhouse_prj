@@ -33,7 +33,8 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
     @SuppressLint("LongLogTag")
     @Override
     public boolean onItemActivated(@NonNull ItemDetailsLookup.ItemDetails itemdetails,
-                                   @NonNull MotionEvent e) {
+                                  @NonNull MotionEvent e) {
+
         // From [https://developer.android.com/reference/androidx/recyclerview/selection/OnItemActivatedListener]:
         // "Called when an item is "activated". An item is activated, for example,
         // when no selection exists and the user taps an item with her finger,
@@ -51,7 +52,13 @@ public class MyOnItemActivatedListener implements OnItemActivatedListener {
         i.putExtra("key", (Double) itemdetails.getSelectionKey());
 
          */
+        Item selecteditem = adapter.getItemAtPosition(itemdetails.getPosition());
         i.putExtra("key2", (Long) itemdetails.getSelectionKey());
+        i.putExtra("key", (Long) selecteditem.getKey());
+        i.putExtra("pname", selecteditem.getTitle());
+        //i.putExtra("pname", (String) itemdetails.);
+
+
         context.startActivity(i);
         return true;
 

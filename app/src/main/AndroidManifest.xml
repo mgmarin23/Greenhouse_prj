@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListOfItems">
         <activity
+            android:name=".NewIdea"
+            android:exported="false" />
+        <activity
             android:name=".NewProblem"
             android:exported="false" />
         <activity android:name=".SecondActivity" />

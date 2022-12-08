@@ -13,6 +13,16 @@ public class MyApplication extends Application {
 
     private static long nextId = 6;
 
+    public static long getNextIdea() {
+        return nextIdea;
+    }
+
+    public static void setNextIdea(long nextIdea) {
+        MyApplication.nextIdea = nextIdea;
+    }
+
+    private static long nextIdea = 17;
+
     public static List<Item> getListofitems(){
         return listofitems;
     }
@@ -51,22 +61,23 @@ public class MyApplication extends Application {
     }
     private void initListOfIdeas() {
 
-        fetchData.add(new Ideas("a",2));
-        fetchData.add(new Ideas("b",2));
-        fetchData.add(new Ideas("c",4));
-        fetchData.add(new Ideas("d",5));
-        fetchData.add(new Ideas("e",4));
-        fetchData.add(new Ideas("f",4));
-        fetchData.add(new Ideas("g",0));
-        fetchData.add(new Ideas("h",0));
-        fetchData.add(new Ideas("i",0));
-        fetchData.add(new Ideas("j",1));
-        fetchData.add(new Ideas("k",1));
-        fetchData.add(new Ideas("l",3));
-        fetchData.add(new Ideas("m",3));
-        fetchData.add(new Ideas("n",5));
-        fetchData.add(new Ideas("ñ",2));
-        fetchData.add(new Ideas("o",6));
+        fetchData.add(new Ideas(0,"a",2,"","",false,false));
+        fetchData.add(new Ideas(1,"b",2,"","",false,false));
+        fetchData.add(new Ideas(2,"c",4,"","",false,false));
+        fetchData.add(new Ideas(3,"d",5,"","",false,false));
+        fetchData.add(new Ideas(4,"e",4,"","",false,false));
+        fetchData.add(new Ideas(5,"f",4,"","",false,false));
+        fetchData.add(new Ideas(6,"g",0,"","",false,false));
+        fetchData.add(new Ideas(7,"h",0,"","",false,false));
+        fetchData.add(new Ideas(8,"i",0,"","",false,false));
+        fetchData.add(new Ideas(9,"j",1,"","",false,false));
+        fetchData.add(new Ideas(10,"k",1,"","",false,false));
+        fetchData.add(new Ideas(11,"l",3,"","",false,false));
+        fetchData.add(new Ideas(12,"m",3,"","",false,false));
+        fetchData.add(new Ideas(13,"n",5,"","",false,false));
+        fetchData.add(new Ideas(14,"ñ",2,"","",false,false));
+        fetchData.add(new Ideas(15,"o",6,"","",false,false));
+        fetchData.add(new Ideas(16,"p",2,"","",false,false));
 
     }
 }

@@ -80,6 +80,9 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Log.d(TAG, "ItemDetailsLookup.ItemDetails<Long>.getPosition() called, will return " + getAbsoluteAdapterPosition());
                 return (getAbsoluteAdapterPosition());
             }
+            public String getName(){
+                return (adapter.getPName(getAbsoluteAdapterPosition()));
+            }
 
             @Nullable
             @Override
@@ -87,6 +90,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 Log.d(TAG, "ItemDetailsLookup.ItemDetails<Long>.getSelectionKey() called, will return " + adapter.getKeyAtPosition(getAbsoluteAdapterPosition()));
                 return (adapter.getKeyAtPosition(getAbsoluteAdapterPosition()));
             }
+
+
             //[MGM] take the value of the status
             /*
             public boolean getStatusItem(){
