@@ -10,16 +10,34 @@ public class MyApplication extends Application {
     private static final List<Ideas> fetchData = new ArrayList<>();
 
 
+
+    private static long nextId = 6;
+
     public static List<Item> getListofitems(){
         return listofitems;
     }
+
     public static List<Ideas> getFetchData(){
         return fetchData;
     }
-
+    /*public static void Listofitems(List<Item> listofitems) {
+        MyApplication.Listofitems = listofitems;
+    }
+    public static void setNextId(int nextId) {
+        MyApplication.nextId = nextId;
+    }
+*/
     public MyApplication(){
         initListOfItems();
         initListOfIdeas();
+    }
+
+    public static long getNextId() {
+        return nextId;
+    }
+
+    public static void setNextId(long nextId) {
+        MyApplication.nextId = nextId;
     }
 
     private void initListOfItems () {
@@ -48,6 +66,7 @@ public class MyApplication extends Application {
         fetchData.add(new Ideas("m",3));
         fetchData.add(new Ideas("n",5));
         fetchData.add(new Ideas("ñ",2));
+        fetchData.add(new Ideas("o",6));
 
     }
 }
